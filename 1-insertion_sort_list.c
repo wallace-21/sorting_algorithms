@@ -40,11 +40,10 @@ void insertion_sort_list(listint_t **list)
 				key->prev->next = key;
 			}
 			else
-				`
 			*list = key;
 			print_list(*list);
 		}
 
-		current = current->next;
+		current = current->next;;
 	}
 }
