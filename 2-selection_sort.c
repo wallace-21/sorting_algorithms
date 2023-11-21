@@ -9,15 +9,15 @@
 
 void selection_sort(int *array, size_t size)
 {
-	int swap, smallest;
+	int swap;
 	size_t i, j, index;
 
-	smallest = array[0];
 	for (i = 0; i < size - 1; i++)
 	{
+		index = i;
 		for (j = i + 1; j < size; j++)
 		{
-			if (array[j] < smallest)
+			if (array[j] < array[index])
 			{
 				index = j;
 			}
