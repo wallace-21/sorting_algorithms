@@ -5,7 +5,7 @@ void swap(int *a, int *b)
 {
     int temp;
 
-    temp = a;
+    temp = *a;
     *a = *b;
     *b = temp;
 }
@@ -31,11 +31,11 @@ int lomuto_partition(int *array, int low, int high, size_t size)
 }
 void quick_sort(int *array, size_t size)
 {
-    if (array = NULL || size < 2)
+    if (array == NULL || size < 2)
     {
         return;
     }
-
+    sort_recursion(array, 0, size - 1, size);
 }
 void sort_recursion(int *array, int low, int high, size_t size)
 {
@@ -44,7 +44,7 @@ void sort_recursion(int *array, int low, int high, size_t size)
     if (low < high)
     {
         index = lomuto_partition(array, low, high, size);
-        sort_recursive(array, low, index - 1, size);
-        sort_recursive(array, index + 1, high, size);
+        sort_recursion(array, low, index - 1, size);
+        sort_recursion(array, index + 1, high, size);
     }
 }
