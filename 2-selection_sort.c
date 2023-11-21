@@ -15,8 +15,7 @@ void selection_sort(int *array, size_t size)
 	smallest = array[0];
 	for (i = 0; i < size - 1; i++)
 	{
-		j = i + 1;
-		for (j; j < size; j++)
+		for (j = i + 1; j < size; j++)
 		{
 			if (array[j] < smallest)
 			{
@@ -25,7 +24,7 @@ void selection_sort(int *array, size_t size)
 		}
 		swap = array[i];
 		array[i] = array[index];
-		array{index} = swap;
+		array[index] = swap;
 		print_array(array, size);
 	}
 }
