@@ -11,6 +11,9 @@ void selection_sort(int *array, size_t size)
 {
 	int swap;
 	size_t i, j, index;
+	
+	if (array == NULL || size < 2)
+		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
@@ -22,9 +25,12 @@ void selection_sort(int *array, size_t size)
 				index = j;
 			}
 		}
-		swap = array[index];
-		array[index] = array[i];
-		array[i] = swap;
-		print_array(array, size);
+		if (index != i)
+		{
+			swap = array[index];
+			array[index] = array[i];
+			array[i] = swap;
+			print_array(array, size);
+		}
 	}
 }
