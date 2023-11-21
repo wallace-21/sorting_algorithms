@@ -37,4 +37,14 @@ void quick_sort(int *array, size_t size)
     }
 
 }
-void sort_recursion()
+void sort_recursion(int *array, int low, int high, size_t size)
+{
+    int index;
+
+    if (low < high)
+    {
+        index = lomuto_partition(array, low, high, size);
+        sort_recursive(array, low, index - 1, size);
+        sort_recursive(array, index + 1, high, size);
+    }
+}
