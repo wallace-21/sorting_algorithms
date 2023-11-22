@@ -10,6 +10,8 @@ void swap(int *a, int *b)
     *b = temp;
 }
 
+void sort_recursion(int *array, int low, int high, size_t size);
+
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
     int pivot, i, j;
